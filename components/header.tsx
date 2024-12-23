@@ -4,7 +4,7 @@ import Link from 'next/link'
 import { CiSearch } from 'react-icons/ci'
 
 import { Input } from '@/components/ui/input'
-import UserPhoto from '@/assets/user/avatar.jpg'
+import UserPhoto from '@/assets/images/user/avatar.jpg'
 
 const Header = () => {
   return (

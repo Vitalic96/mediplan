@@ -1,3 +1,5 @@
+import { ComponentType } from 'react'
+
 import DashboardIcon from '@/assets/icons/dashboard.svg'
 import NewUserIcon from '@/assets/icons/new-user.svg'
 import TeamMembersIcon from '@/assets/icons/team-members.svg'
@@ -7,7 +9,6 @@ import BookIcon from '@/assets/icons/book.svg'
 import NotificationIcon from '@/assets/icons/notification.svg'
 import CommunityIcon from '@/assets/icons/community.svg'
 import LogoutIcon from '@/assets/icons/logout.svg'
-import { ComponentType } from 'react'
 
 type MenuItem = {
   position: 'top' | 'bottom'

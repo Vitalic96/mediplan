@@ -7,10 +7,10 @@ import { menuList } from '@/constants'
 const Sidebar = () => {
   return (
     <div className='relative flex w-[200px] flex-col gap-10 bg-white py-10 shadow-[-10000px_0_0_10000px_#fff]'>
-      <div className='flex items-center gap-2'>
+      <Link href='/dashboard' className='flex items-center gap-2'>
         <Image src={'/images/logo.png'} width={40} height={40} alt='' />
         <div className='text-xl font-semibold'>MediPlan</div>
-      </div>
+      </Link>
       <ul className='flex grow flex-col gap-2'>
         {menuList.map(({ position, label, href, Icon }, i) => {
           return (

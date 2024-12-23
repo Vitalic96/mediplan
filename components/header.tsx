@@ -17,7 +17,7 @@ const Header = () => {
         />
       </div>
       <Link
-        href='/'
+        href='/dashboard'
         className='hover:text-violet flex items-center gap-4 text-sm transition-colors'
       >
         <span>Mikhail Revenko</span>

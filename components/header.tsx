@@ -12,7 +12,10 @@ const Header = () => {
     <header className='flex min-h-[var(--header-height)] items-center border-b border-[#E9E9E9]/40 bg-white'>
       <div className='container flex items-center gap-4 px-0 py-5'>
         <Logo href='/' />
-        <InputWithIcon Icon={Search} className='mb-4 mt-1'>
+        <InputWithIcon
+          Icon={Search}
+          className='relative ml-auto max-w-[320px] grow'
+        >
           <Input type='text' placeholder='Search' />
         </InputWithIcon>
         <Link

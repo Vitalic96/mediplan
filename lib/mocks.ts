@@ -12,7 +12,7 @@ import Image3_2 from '@/assets/images/dashboard/3-2.jpg'
 import Image3_3 from '@/assets/images/dashboard/3-3.jpg'
 import Image3_4 from '@/assets/images/dashboard/3-4.jpg'
 
-export const mockListActivity = [
+export const mockActivityList = [
   Image1_1,
   Image1_2,
   Image1_3,

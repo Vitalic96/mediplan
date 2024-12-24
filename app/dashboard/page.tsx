@@ -1,51 +1,57 @@
-import Image from 'next/image'
+import { Search } from 'lucide-react'
 
+import { UserList } from '@/components/user-list'
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
-import { mockListActivity } from '@/lib/mocks'
+import { InputWithIcon } from '@/components/input-with-icon'
+import { Input } from '@/components/ui/input'
+import {
+  mockActivityList,
+  mockCommunityList,
+  mockSearchList,
+} from '@/lib/mocks'
 
 const DashboardPage = () => {
   return (
-    <div className='grid grid-cols-12 gap-5'>
-      <Card className='col-span-6 max-h-[415px] overflow-hidden'>
-        <CardHeader>
-          <CardTitle>Calendar</CardTitle>
+    <div className='grid grid-cols-12 gap-5 py-12'>
+      <Card className='col-span-6 flex max-h-[415px] flex-col'>
+        <CardHeader className='min-h-[90px] gap-x-6 gap-y-3'>
+          <CardTitle asChild>
+            <h3>Calendar</h3>
+          </CardTitle>
         </CardHeader>
-        <CardContent></CardContent>
+        <CardContent className='flex grow flex-col gap-6 overflow-y-auto [&::-webkit-scrollbar-thumb]:rounded-sm [&::-webkit-scrollbar-thumb]:bg-violet [&::-webkit-scrollbar-track]:bg-violet-100 [&::-webkit-scrollbar]:w-[3px]'></CardContent>
       </Card>
-      <Card className='col-span-6 max-h-[415px] overflow-hidden'>
-        <CardHeader>
-          <CardTitle>Pacient Wall Activity</CardTitle>
+      <Card className='col-span-6 flex max-h-[415px] flex-col'>
+        <CardHeader className='min-h-[90px] gap-x-6 gap-y-3'>
+          <CardTitle asChild>
+            <h3>Pacient Wall Activity</h3>
+          </CardTitle>
         </CardHeader>
-        <CardContent>
-          <ul className='flex flex-col gap-5'>
-            {mockListActivity.map(({ image, name, info, date }, i) => (
-              <li key={i} className='flex items-center gap-6'>
-                <Image
-                  className='shrink-0 self-start'
-                  src={image}
-                  width={52}
-                  height={52}
-                  alt=''
-                />
-                <div className='w-[150px] shrink-0'> {name}</div>
-                <div className='text-violet grow text-sm'> {info}</div>
-                <div className='text-sm text-gray-950 opacity-20'>{date}</div>
-              </li>
-            ))}
-          </ul>
+        <CardContent className='flex grow flex-col gap-6 overflow-y-auto [&::-webkit-scrollbar-thumb]:rounded-sm [&::-webkit-scrollbar-thumb]:bg-violet [&::-webkit-scrollbar-track]:bg-violet-100 [&::-webkit-scrollbar]:w-[2px]'>
+          <UserList users={mockActivityList} />
         </CardContent>
       </Card>
-      <Card className='col-span-6 max-h-[415px] overflow-hidden'>
-        <CardHeader>
+      <Card className='col-span-6 flex max-h-[415px] flex-col'>
+        <CardHeader className='min-h-[90px] gap-x-6 gap-y-3'>
           <CardTitle>Search member</CardTitle>
+          <InputWithIcon Icon={Search}>
+            <Input type='text' placeholder='Search' />
+          </InputWithIcon>
         </CardHeader>
-        <CardContent></CardContent>
+        <CardContent className='flex grow flex-col gap-6 overflow-y-auto [&::-webkit-scrollbar-thumb]:rounded-sm [&::-webkit-scrollbar-thumb]:bg-violet [&::-webkit-scrollbar-track]:bg-violet-100 [&::-webkit-scrollbar]:w-[2px]'>
+          <UserList users={mockSearchList} />
+        </CardContent>
       </Card>
-      <Card className='col-span-6 max-h-[415px] overflow-hidden'>
-        <CardHeader>
+      <Card className='col-span-6 flex max-h-[415px] flex-col'>
+        <CardHeader className='min-h-[90px] flex-row items-center gap-x-6 gap-y-3'>
           <CardTitle>Person Community</CardTitle>
+          <InputWithIcon Icon={Search} className='grow'>
+            <Input type='text' placeholder='Search' />
+          </InputWithIcon>
         </CardHeader>
-        <CardContent></CardContent>
+        <CardContent className='flex grow flex-col gap-6 overflow-y-auto [&::-webkit-scrollbar-thumb]:rounded-sm [&::-webkit-scrollbar-thumb]:bg-violet [&::-webkit-scrollbar-track]:bg-violet-100 [&::-webkit-scrollbar]:w-[2px]'>
+          <UserList users={mockCommunityList} hasNumbers />
+        </CardContent>
       </Card>
     </div>
   )

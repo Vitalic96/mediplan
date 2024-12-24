@@ -18,18 +18,53 @@ type MenuItem = {
 }
 
 export const menuList = [
-  { position: 'top', label: 'Dashboard', href: '/', Icon: DashboardIcon },
-  { position: 'top', label: 'New User', href: '/', Icon: NewUserIcon },
-  { position: 'top', label: 'Members', href: '/', Icon: TeamMembersIcon },
-  { position: 'top', label: 'Mailbox', href: '/', Icon: MailboxIcon },
-  { position: 'top', label: 'Reports', href: '/', Icon: ReportIcon },
-  { position: 'top', label: 'Library', href: '/', Icon: BookIcon },
+  {
+    position: 'top',
+    label: 'Dashboard',
+    href: '/dashboard',
+    Icon: DashboardIcon,
+  },
+  {
+    position: 'top',
+    label: 'New User',
+    href: '/dashboard/add-user/',
+    Icon: NewUserIcon,
+  },
+  {
+    position: 'top',
+    label: 'Members',
+    href: '/dashboard/members/',
+    Icon: TeamMembersIcon,
+  },
+  {
+    position: 'top',
+    label: 'Mailbox',
+    href: '/dashboard/mailbox/',
+    Icon: MailboxIcon,
+  },
+  {
+    position: 'top',
+    label: 'Reports',
+    href: '/dashboard/reports/',
+    Icon: ReportIcon,
+  },
+  {
+    position: 'top',
+    label: 'Library',
+    href: '/dashboard/library/',
+    Icon: BookIcon,
+  },
   {
     position: 'top',
     label: 'Notifications',
-    href: '/',
+    href: '/dashboard/notifications/',
     Icon: NotificationIcon,
   },
-  { position: 'top', label: 'Community', href: '/', Icon: CommunityIcon },
+  {
+    position: 'top',
+    label: 'Community',
+    href: '/dashboard/community/',
+    Icon: CommunityIcon,
+  },
   { position: 'bottom', label: 'Go Out', href: '/', Icon: LogoutIcon },
 ] satisfies MenuItem[] as MenuItem[]

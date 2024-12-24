@@ -16,7 +16,7 @@ const Sidebar = () => {
             <li key={i} className={position === 'top' ? 'order-1' : 'order-2'}>
               <Link
                 href={href}
-                className='before:bg-violet hover:text-violet relative flex items-center gap-2 py-4 text-[15px] text-gray-700 before:absolute before:bottom-0 before:right-0 before:top-0 before:m-auto before:h-[23px] before:w-[1px] before:opacity-0'
+                className='relative flex items-center gap-2 py-4 text-[15px] text-gray-700 before:absolute before:bottom-0 before:right-0 before:top-0 before:m-auto before:h-[23px] before:w-[1px] before:bg-violet before:opacity-0 hover:text-violet'
               >
                 <Icon />
                 {label}

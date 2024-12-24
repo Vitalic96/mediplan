@@ -1,5 +1,5 @@
-import Header from '@/components/header'
-import Sidebar from '@/components/sidebar'
+import { Header } from '@/components/header'
+import { Sidebar } from '@/components/sidebar'
 
 const DashboardLayout = ({
   children,
@@ -11,7 +11,7 @@ const DashboardLayout = ({
       <Sidebar />
       <main className='grow'>
         <Header />
-        {children}
+        <div className='-mt-8'>{children}</div>
       </main>
     </div>
   )

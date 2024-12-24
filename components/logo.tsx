@@ -11,7 +11,7 @@ const Logo = forwardRef<
   return (
     <Link
       ref={ref}
-      className={cn('-ml-2 flex items-center gap-2', className)}
+      className={cn('flex items-center gap-2', className)}
       {...props}
     >
       <Image src={'/images/logo.png'} width={40} height={40} alt='' />

@@ -12,7 +12,7 @@ const Sidebar = () => {
 
   return (
     <aside className='relative flex w-[200px] shrink-0 flex-col gap-6 bg-white py-12 shadow-[-10000px_0_0_10000px_#fff]'>
-      <Logo href='/' />
+      <Logo className='-ml-2' href='/' />
       <ul className='flex grow flex-col'>
         {menuList.map(({ position, label, href, Icon }, i) => {
           const isActivePage = href === pathname || href === pathname + '/'

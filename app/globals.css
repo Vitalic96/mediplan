@@ -4,6 +4,7 @@
 
 @layer base {
   :root {
+    --header-height: 114px;
     --radius: 0.5rem;
   }
   body {

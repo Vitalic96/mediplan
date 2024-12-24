@@ -6,10 +6,9 @@
   :root {
     --radius: 0.5rem;
   }
-
   body {
     @apply text-black;
     background: #f6f6f6;
-    font-family: var(--font-poppits), system-ui, sans-serif;
+    font-family: var(--font-poppips), system-ui, sans-serif;
   }
 }

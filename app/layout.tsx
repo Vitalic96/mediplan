@@ -22,7 +22,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang='en'>
-      <body className={`${poppips.variable} antialiased`}>{children}</body>
+      <body className={`${poppips.variable} antialiased`}>
+        <div className='min-w-[320px] overflow-hidden'>{children}</div>
+      </body>
     </html>
   )
 }

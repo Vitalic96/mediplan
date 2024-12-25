@@ -17,6 +17,6 @@
 
 @layer components {
   .custom-scroll {
-    @apply [&::-webkit-scrollbar-thumb]:rounded-sm [&::-webkit-scrollbar-thumb]:bg-gray-400/20 [&::-webkit-scrollbar-track]:bg-transparent [&::-webkit-scrollbar]:h-[2px] [&::-webkit-scrollbar]:w-[2px];
+    @apply [&::-webkit-scrollbar-thumb]:rounded-sm [&::-webkit-scrollbar-thumb]:bg-violet-400/20 [&::-webkit-scrollbar-track]:bg-transparent [&::-webkit-scrollbar]:h-[2px] [&::-webkit-scrollbar]:w-[2px];
   }
 }

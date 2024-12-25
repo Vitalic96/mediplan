@@ -8,7 +8,7 @@
     --radius: 0.5rem;
   }
   body {
-    @apply text-black;
+    @apply text-gray-900;
     background: #f6f6f6;
     font-family: var(--font-poppips), system-ui, sans-serif;
   }

@@ -14,8 +14,14 @@ const Logo = forwardRef<
       className={cn('flex items-center gap-2', className)}
       {...props}
     >
-      <Image src={'/images/logo.png'} width={40} height={40} alt='' />
-      <div className='text-xl font-semibold'>MediPlan</div>
+      <Image
+        src={'/images/logo.png'}
+        width={40}
+        height={40}
+        className='h-[50px] w-[50px] lg:h-10 lg:w-10'
+        alt=''
+      />
+      <div className='hidden text-xl font-semibold lg:block'>MediPlan</div>
     </Link>
   )
 })

@@ -5,6 +5,7 @@
 @layer base {
   :root {
     --header-height: 114px;
+    --mobile-header-height: 80px;
     --radius: 0.5rem;
   }
   body {

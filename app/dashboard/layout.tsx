@@ -7,8 +7,8 @@ const DashboardLayout = ({
   children: React.ReactNode
 }>) => {
   return (
-    <div className='container flex min-h-screen gap-5'>
-      <Sidebar />
+    <div className='container flex min-h-screen flex-col gap-5 lg:flex-row'>
+      <Sidebar className='hidden lg:flex' />
       <main className='grow'>
         <Header />
         <div className='-mt-8'>{children}</div>

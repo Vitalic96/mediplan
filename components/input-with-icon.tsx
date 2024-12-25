@@ -13,7 +13,7 @@ export const InputWithIcon = forwardRef<
     <div ref={ref} className={cn('relative', className)} {...props}>
       <Icon
         size={20}
-        className='pointer-events-none absolute bottom-0 right-8 top-0 m-auto text-[#817474]'
+        className='pointer-events-none absolute bottom-0 right-4 top-0 m-auto text-[#817474] xl:right-8'
       />
       {children}
     </div>

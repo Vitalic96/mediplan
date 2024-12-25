@@ -64,16 +64,25 @@ const DayTab = () => {
               time: '5pm-6pm',
             },
           ].map(({ name, time }, i) => (
-            <li key={i} className='flex items-center justify-between gap-5'>
-              <h5 className='mr-auto font-semibold text-gray-800'>{name}</h5>
-              <div className='text-[#817474]'>at</div>
-              <div className='text-gray-700'>{time}</div>
-              <Button size='icon' disabled>
-                <Phone size={14} />
-              </Button>
-              <Button size='icon'>
-                <Pencil size={14} />
-              </Button>
+            <li
+              key={i}
+              className='grid grid-flow-col grid-rows-2 items-center justify-between gap-x-5 rounded-md bg-[#F6F6F6] px-4 py-2 xl:flex xl:bg-transparent xl:p-0'
+            >
+              <h5 className='col-span-8 row-span-1 mr-auto font-semibold text-gray-800'>
+                {name}
+              </h5>
+              <div className='col-span-8 row-span-1 flex items-center gap-4'>
+                <div className='text-[#817474]'>at</div>
+                <div className='text-gray-700'>{time}</div>
+              </div>
+              <div className='col-span-4 row-span-2 flex items-center justify-end gap-4'>
+                <Button size='smIcon' disabled>
+                  <Phone size={14} />
+                </Button>
+                <Button size='smIcon'>
+                  <Pencil size={14} />
+                </Button>
+              </div>
             </li>
           ))}
         </ul>

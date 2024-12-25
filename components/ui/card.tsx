@@ -11,7 +11,7 @@ const Card = React.forwardRef<
   <div
     ref={ref}
     className={cn(
-      'rounded-xl border-none bg-white text-neutral-950 shadow-[0px_12px_50px_rgba(243,248,255,0.2)]',
+      'flex flex-col rounded-xl border-none bg-white text-neutral-950 shadow-[0px_12px_50px_rgba(243,248,255,0.2)]',
       className,
     )}
     {...props}
@@ -25,7 +25,7 @@ const CardHeader = React.forwardRef<
 >(({ className, ...props }, ref) => (
   <div
     ref={ref}
-    className={cn('flex flex-col space-y-1.5 px-[30px] py-7', className)}
+    className={cn('flex flex-col px-[30px] py-7', className)}
     {...props}
   />
 ))
@@ -34,7 +34,7 @@ CardHeader.displayName = 'CardHeader'
 const cardTitleVariants = cva('', {
   variants: {
     variant: {
-      default: 'font-medium text-lg',
+      default: 'text-lg font-medium',
     },
   },
   defaultVariants: {

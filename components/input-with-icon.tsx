@@ -8,9 +8,9 @@ export const InputWithIcon = forwardRef<
   React.HTMLAttributes<HTMLDivElement> & {
     Icon: ComponentType<{ className?: string } & LucideProps>
   }
->(({ Icon, children, className, ...props }) => {
+>(({ Icon, children, className, ...props }, ref) => {
   return (
-    <div className={cn('relative', className)} {...props}>
+    <div ref={ref} className={cn('relative', className)} {...props}>
       <Icon
         size={20}
         className='pointer-events-none absolute bottom-0 right-8 top-0 m-auto text-[#817474]'

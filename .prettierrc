@@ -1,6 +1,7 @@
 {
   "plugins": ["prettier-plugin-tailwindcss"],
   "tailwindFunctions": ["cn", "cva"],
+  "tailwindAttributes": ["classNames"],
   "jsxSingleQuote": true,
   "singleQuote": true,
   "tabWidth": 2,

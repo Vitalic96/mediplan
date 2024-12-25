@@ -71,6 +71,15 @@ export default {
         md: 'calc(var(--radius) - 2px)',
         sm: 'calc(var(--radius) - 4px)',
       },
+      keyframes: {
+        fadein: {
+          '0%': { opacity: '0' },
+          '100%': { opacity: '100' },
+        },
+      },
+      animation: {
+        fadein: 'fadein linear .3s',
+      },
     },
   },
   plugins: [require('tailwindcss-animate')],

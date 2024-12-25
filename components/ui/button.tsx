@@ -5,7 +5,7 @@ import { cva, type VariantProps } from 'class-variance-authority'
 import { cn } from '@/lib/utils'
 
 const buttonVariants = cva(
-  'inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-full px-4 py-2 text-lg font-normal transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-neutral-950 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0',
+  'inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-full px-4 py-2 text-lg font-normal transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-neutral-950 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:shrink-0',
   {
     variants: {
       variant: {
@@ -18,18 +18,18 @@ const buttonVariants = cva(
           'bg-neutral-100 text-neutral-900 shadow-sm hover:bg-neutral-100/80',
         ghost: 'hover:bg-neutral-100 hover:text-neutral-900',
         gray: 'bg-gray-300/20 text-gray-400 hover:bg-gray-300/30 hover:bg-gray-300/40',
-        link: 'text-neutral-900 underline-offset-4 hover:underline dark:text-neutral-50',
+        link: 'text-normal p-0 text-neutral-900 underline-offset-4 hover:underline dark:text-neutral-50',
       },
       size: {
-        default: 'h-[50px]',
-        sm: 'h-10',
-        lg: 'h-14',
-        icon: 'h-9 w-9',
+        sm: 'h-[30px]',
+        md: 'h-10',
+        lg: 'h-[50px]',
+        icon: 'h-6 w-6 p-1',
       },
     },
     defaultVariants: {
       variant: 'primary',
-      size: 'default',
+      size: 'lg',
     },
   },
 )

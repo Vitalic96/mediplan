@@ -21,7 +21,7 @@ const DashboardPage = () => {
             <h3>Pacient Wall Activity</h3>
           </CardTitle>
         </CardHeader>
-        <CardContent className='custom-scroll flex grow flex-col gap-6 overflow-y-auto overflow-x-hidden'>
+        <CardContent className='custom-scroll flex grow flex-col gap-6 overflow-x-hidden'>
           <UserList users={mockActivityList} />
         </CardContent>
       </Card>
@@ -32,7 +32,7 @@ const DashboardPage = () => {
             <Input type='text' placeholder='Search' />
           </InputWithIcon>
         </CardHeader>
-        <CardContent className='custom-scroll flex grow flex-col gap-6 overflow-y-auto overflow-x-hidden'>
+        <CardContent className='custom-scroll flex grow flex-col gap-6 overflow-x-hidden'>
           <UserList users={mockSearchList} />
         </CardContent>
       </Card>
@@ -43,7 +43,7 @@ const DashboardPage = () => {
             <Input type='text' placeholder='Search' />
           </InputWithIcon>
         </CardHeader>
-        <CardContent className='custom-scroll grow gap-6 overflow-y-auto overflow-x-hidden'>
+        <CardContent className='custom-scroll grow gap-6 overflow-x-hidden'>
           <UserList users={mockCommunityList} hasNumbers />
         </CardContent>
       </Card>

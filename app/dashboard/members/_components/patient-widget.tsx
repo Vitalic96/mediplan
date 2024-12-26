@@ -15,7 +15,7 @@ const PatientWidget = forwardRef<
   React.HTMLAttributes<HTMLDivElement>
 >(({ className, ...props }, ref) => {
   const [activeTab, setActiveTab] = useState<(typeof patientTabList)[number]>(
-    patientTabList[patientTabList.length - 1],
+    patientTabList[0],
   )
   return (
     <Card ref={ref} className={cn('lg:max-h-[850px]', className)} {...props}>

@@ -46,3 +46,76 @@ export const mockCommunityList = [Image3_1, Image3_2, Image3_3, Image3_4].map(
       date: '03.04.2021',
     }) satisfies UserCard,
 ) as UserCard[]
+
+export const mockEVisitHistory = [
+  {
+    doctor: 'Antonin Guillot',
+    date: '14.03.2021',
+    begin: '18:20',
+    end: '19:20',
+    period: '1h',
+  },
+  {
+    doctor: 'Irma Rogers',
+    date: '14.03.2021',
+    begin: '10:20',
+    end: '10:40',
+    period: '20m',
+  },
+  {
+    doctor: 'Antonin Guillot',
+    date: '14.03.2021',
+    begin: '18:20',
+    end: '19:20',
+    period: '1h',
+  },
+  {
+    doctor: 'Irma Rogers',
+    date: '14.03.2021',
+    begin: '10:20',
+    end: '10:40',
+    period: '20m',
+  },
+  {
+    doctor: 'Antonin Guillot',
+    date: '14.03.2021',
+    begin: '18:20',
+    end: '19:20',
+    period: '1h',
+  },
+  {
+    doctor: 'Irma Rogers',
+    date: '14.03.2021',
+    begin: '10:20',
+    end: '10:40',
+    period: '20m',
+  },
+  {
+    doctor: 'Antonin Guillot',
+    date: '14.03.2021',
+    begin: '18:20',
+    end: '19:20',
+    period: '1h',
+  },
+  {
+    doctor: 'Irma Rogers',
+    date: '14.03.2021',
+    begin: '10:20',
+    end: '10:40',
+    period: '20m',
+  },
+  {
+    doctor: 'Antonin Guillot',
+    date: '14.03.2021',
+    begin: '18:20',
+    end: '19:20',
+    period: '1h',
+  },
+  {
+    doctor: 'Irma Rogers',
+    date: '14.03.2021',
+    begin: '10:20',
+    end: '10:40',
+    period: '20m',
+  },
+]

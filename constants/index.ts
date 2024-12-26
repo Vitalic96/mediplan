@@ -68,3 +68,16 @@ export const menuList = [
   },
   { position: 'bottom', label: 'Go Out', href: '/', Icon: LogoutIcon },
 ] satisfies MenuItem[] as MenuItem[]
+
+export const patientTabList = [
+  'Basic Info',
+  'Circle',
+  'Wall Activity',
+  'Smoking Report',
+  'Journal',
+  'Pain & Sympton',
+  'Depressions',
+  'Weight',
+  'Note',
+  'E-visit history',
+] as const

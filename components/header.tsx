@@ -14,10 +14,17 @@ import { cn } from '@/lib/utils'
 import UserPhoto from '@/assets/images/user/avatar.jpg'
 
 const Header = ({ className }: { className?: string }) => {
-  const [isOpen, setIsOpen] = useState(false)
+  const [isOpenMenu, setIsOpenMenu] = useState(false)
+  const [isOpenSearch, setIsOpenSearch] = useState(false)
 
-  const handleOpen = () => {
-    setIsOpen((p) => !p)
+  const handleOpenMenu = () => {
+    setIsOpenSearch(false)
+    setIsOpenMenu((p) => !p)
+  }
+
+  const handleOpenSearch = () => {
+    setIsOpenMenu(false)
+    setIsOpenSearch((p) => !p)
   }
 
   return (
@@ -33,15 +40,15 @@ const Header = ({ className }: { className?: string }) => {
           <Logo
             href='/'
             className={cn(
-              'animate-fadein shrink-0 lg:hidden',
-              isOpen && 'hidden',
+              'shrink-0 animate-fadein lg:hidden',
+              isOpenMenu && 'hidden',
             )}
           />
           <Link
             href='/dashboard'
             className={cn(
-              'animate-fadein flex shrink-0 items-center justify-end gap-4 text-xs transition-colors hover:text-violet active:text-violet-600 lg:order-4 lg:flex lg:basis-48',
-              !isOpen && 'hidden',
+              'flex shrink-0 animate-fadein items-center justify-end gap-4 text-xs transition-colors hover:text-violet active:text-violet-600 lg:order-4 lg:flex lg:basis-48',
+              !isOpenMenu && 'hidden',
             )}
           >
             <Image
@@ -55,27 +62,39 @@ const Header = ({ className }: { className?: string }) => {
               Mikhail Revenko
             </span>
           </Link>
-          <InputWithIcon
-            Icon={Search}
-            className='relative ml-auto hidden max-w-[320px] grow lg:block'
+          <div
+            className={cn(
+              'fixed left-0 right-0 top-[var(--mobile-header-height)] z-50 mx-auto grow bg-white transition-[visibility,opacity] duration-300 lg:relative lg:top-0 lg:ml-auto lg:mr-0 lg:max-w-[320px] lg:bg-transparent',
+              isOpenSearch ? 'visible opacity-100' : 'invisible opacity-0',
+            )}
           >
-            <Input type='text' placeholder='Search' className='bg-white' />
-          </InputWithIcon>
-          <Button variant='gray' size='icon' className='ml-auto lg:hidden'>
+            <InputWithIcon
+              Icon={Search}
+              className='mx-auto w-full max-w-[280px] py-4 2xs:max-w-[320px]'
+            >
+              <Input type='text' placeholder='Search' className='lg:bg-white' />
+            </InputWithIcon>
+          </div>
+          <Button
+            variant='gray'
+            size='icon'
+            className='ml-auto lg:hidden'
+            onClick={handleOpenSearch}
+          >
             <Search size={20} />
           </Button>
           <Button
             variant='gray'
             size='icon'
             className='lg:hidden'
-            onClick={handleOpen}
+            onClick={handleOpenMenu}
           >
-            {isOpen ? <X size={20} /> : <Menu size={20} />}
+            {isOpenMenu ? <X size={20} /> : <Menu size={20} />}
           </Button>
         </div>
       </header>
       <div className='h-[var(--mobile-header-height)] lg:hidden lg:h-[var(--header-height)]'></div>
-      <Sidebar isOpen={isOpen} className='lg:hidden' />
+      <Sidebar isOpen={isOpenMenu} className='lg:hidden' />
     </>
   )
 }

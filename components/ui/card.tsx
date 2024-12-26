@@ -34,6 +34,7 @@ CardHeader.displayName = 'CardHeader'
 const cardTitleVariants = cva('', {
   variants: {
     variant: {
+      lg: 'text-[22px]',
       default: 'text-lg font-medium',
     },
   },

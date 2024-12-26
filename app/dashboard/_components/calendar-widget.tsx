@@ -19,7 +19,7 @@ const CalendarWidget = forwardRef<
         <CardTitle asChild>
           <h3>Calendar</h3>
         </CardTitle>
-        <div className='flex shrink-0 grow gap-3 xl:justify-end xl:self-center'>
+        <div className='flex shrink-0 grow gap-2 sm:gap-5 xl:justify-end xl:self-center'>
           {['Day', 'Week', 'Month'].map((label, i) => (
             <Button
               key={i}

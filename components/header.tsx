@@ -64,7 +64,7 @@ const Header = ({ className }: { className?: string }) => {
           </Link>
           <div
             className={cn(
-              'fixed left-0 right-0 top-[var(--mobile-header-height)] z-50 mx-auto grow bg-white transition-[visibility,opacity] duration-300 lg:relative lg:top-0 lg:ml-auto lg:mr-0 lg:max-w-[320px] lg:bg-transparent',
+              'fixed left-0 right-0 top-[var(--mobile-header-height)] z-50 mx-auto grow bg-white transition-[visibility,opacity] duration-300 lg:visible lg:relative lg:top-0 lg:ml-auto lg:mr-0 lg:max-w-[320px] lg:bg-transparent lg:opacity-100',
               isOpenSearch ? 'visible opacity-100' : 'invisible opacity-0',
             )}
           >

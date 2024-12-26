@@ -33,7 +33,7 @@ const CalendarWidget = forwardRef<
           ))}
         </div>
       </CardHeader>
-      <CardContent className='custom-scroll flex grow flex-col gap-6 overflow-x-hidden'>
+      <CardContent className='custom-scroll flex grow flex-col gap-3 overflow-x-hidden'>
         {activeIndexTab === 0 && <DayTab />}
         {activeIndexTab === 1 && <DayTab />}
         {activeIndexTab === 2 && <MonthTab />}

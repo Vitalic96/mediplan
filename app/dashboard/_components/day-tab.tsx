@@ -3,10 +3,14 @@
 import { useState } from 'react'
 import { ChevronLeft, ChevronRight, Pencil, Phone } from 'lucide-react'
 
-import { Button } from '@/components/ui/button'
 import { getDateFormat } from '@/lib/utils'
+import { Button } from '@/components/ui/button'
+import { EditMeetingDialog } from '@/components/dialogs/edit-meeting-dialog'
+import { CreateMeetingDialog } from '@/components/dialogs/create-meeting-dialog'
 
 const DayTab = () => {
+  const [isEditPopupOpen, setIsEditMeetingPopupOpen] = useState(false)
+  const [isCreatePopupOpen, setIsCreateMeetingPopupOpen] = useState(false)
   const [date, setDate] = useState<Date>(new Date(2021, 4, 21))
 
   const handlePrevDate = () => {
@@ -15,6 +19,14 @@ const DayTab = () => {
 
   const handleNextDate = () => {
     setDate(new Date(date.setDate(date.getDate() + 1)))
+  }
+
+  const handleEdit = () => {
+    setIsEditMeetingPopupOpen(true)
+  }
+
+  const handleCreate = () => {
+    setIsCreateMeetingPopupOpen(true)
   }
 
   return (
@@ -79,7 +91,7 @@ const DayTab = () => {
                 <Button size='xsIcon' disabled>
                   <Phone size={12} />
                 </Button>
-                <Button size='xsIcon'>
+                <Button size='xsIcon' onClick={handleEdit}>
                   <Pencil size={12} />
                 </Button>
               </div>
@@ -89,10 +101,19 @@ const DayTab = () => {
         <Button
           variant='link'
           className='text-normal h-auto text-base text-violet'
+          onClick={handleCreate}
         >
           Add +
         </Button>
       </div>
+      <EditMeetingDialog
+        open={isEditPopupOpen}
+        onOpenChange={setIsEditMeetingPopupOpen}
+      />
+      <CreateMeetingDialog
+        open={isCreatePopupOpen}
+        onOpenChange={setIsCreateMeetingPopupOpen}
+      />
     </>
   )
 }

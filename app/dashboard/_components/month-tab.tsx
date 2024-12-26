@@ -6,11 +6,13 @@ import {
   SelectSingleEventHandler,
 } from 'react-day-picker'
 
+import { getDateFormat } from '@/lib/utils'
 import { Calendar } from '@/components/ui/calendar'
 import { Badge } from '@/components/ui/badge'
-import { getDateFormat } from '@/lib/utils'
+import { CreateMeetingDialog } from '@/components/dialogs/create-meeting-dialog'
 
 const MonthTab = () => {
+  const [isCreatePopupOpen, setIsCreateMeetingPopupOpen] = useState(false)
   const [date, setDate] = useState<Date | undefined>(new Date(2021, 4, 21))
   const [month, setMonth] = useState(date)
   const [firstDay, lastDay] = useMemo(() => {
@@ -25,6 +27,7 @@ const MonthTab = () => {
 
   const handleDateSelect: SelectSingleEventHandler = (date) => {
     setDate(date)
+    setIsCreateMeetingPopupOpen(true)
   }
 
   const handleMonthChange: MonthChangeEventHandler = (date) => {
@@ -49,6 +52,10 @@ const MonthTab = () => {
         onMonthChange={handleMonthChange}
         onSelect={handleDateSelect}
         className='rounded-md border'
+      />
+      <CreateMeetingDialog
+        open={isCreatePopupOpen}
+        onOpenChange={setIsCreateMeetingPopupOpen}
       />
     </div>
   )

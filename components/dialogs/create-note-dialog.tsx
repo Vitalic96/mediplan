@@ -35,7 +35,7 @@ const CreateNoteDialog = (props: DialogProps) => {
           <label className='flex flex-col gap-x-5 gap-y-2 md:flex-row'>
             <div className='text-[12px] text-[#817474] md:pt-2'>Note</div>
             <Textarea
-              className='h-[350px] resize-none lg:p-6 lg:text-lg'
+              className='h-[200px] resize-none md:h-[350px] lg:p-6 lg:text-lg'
               value={note}
               onChange={handleNoteChange}
             />

@@ -1,7 +1,7 @@
 'use client'
 
 import { forwardRef, useState } from 'react'
-import { Mail, Pencil, Phone, Trash2, UserRound } from 'lucide-react'
+import { Bell, Ellipsis, Trash2, UserRound } from 'lucide-react'
 
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import { Button } from '@/components/ui/button'
@@ -9,6 +9,7 @@ import { cn } from '@/lib/utils'
 import { patientTabList } from '@/constants'
 import { BasicInfoTab } from './tabs/basic-info-tab'
 import { EVisitHistoryTab } from './tabs/e-visit-history-tab'
+import TelegramIcon from '@/assets/icons/telegram.svg'
 
 const PatientWidget = forwardRef<
   HTMLDivElement,
@@ -43,17 +44,17 @@ const PatientWidget = forwardRef<
             <ul className='flex shrink-0 gap-3 2xs:gap-5 xl:pt-1'>
               <li>
                 <Button size='xsIcon' className='xl:w-6'>
-                  <Phone size={14} />
+                  <TelegramIcon className='w-[16px]' />
                 </Button>
               </li>
               <li>
                 <Button size='xsIcon' className='xl:w-6'>
-                  <Mail size={14} />
+                  <Ellipsis size={16} />
                 </Button>
               </li>
               <li>
                 <Button size='xsIcon' className='xl:w-6'>
-                  <Pencil size={14} />
+                  <Bell fill='white' size={12} />
                 </Button>
               </li>
               <li className='xl:hidden'>

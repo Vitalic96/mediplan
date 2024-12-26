@@ -66,11 +66,7 @@ export default {
       fontFamily: {
         poppits: ['var(--font-poppits)'],
       },
-      borderRadius: {
-        lg: 'var(--radius)',
-        md: 'calc(var(--radius) - 2px)',
-        sm: 'calc(var(--radius) - 4px)',
-      },
+
       keyframes: {
         fadein: {
           '0%': { opacity: '0' },

@@ -76,17 +76,20 @@ const DayTab = () => {
                 <div className='text-gray-700'>{time}</div>
               </div>
               <div className='col-span-4 row-span-2 flex items-center justify-end gap-4'>
-                <Button size='smIcon' disabled>
-                  <Phone size={14} />
+                <Button size='xsIcon' disabled>
+                  <Phone size={12} />
                 </Button>
-                <Button size='smIcon'>
-                  <Pencil size={14} />
+                <Button size='xsIcon'>
+                  <Pencil size={12} />
                 </Button>
               </div>
             </li>
           ))}
         </ul>
-        <Button variant='link' className='text-normal h-auto text-violet'>
+        <Button
+          variant='link'
+          className='text-normal h-auto text-base text-violet'
+        >
           Add +
         </Button>
       </div>

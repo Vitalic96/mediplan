@@ -20,12 +20,12 @@ const Sidebar = ({
     <>
       <aside
         className={cn(
-          'fixed bottom-0 left-0 right-0 top-[var(--mobile-header-height)] z-50 shrink-0 overflow-scroll bg-white py-3 transition-[visibility,opacity] duration-300 lg:visible lg:relative lg:top-0 lg:w-[180px] lg:py-12 lg:opacity-100 lg:shadow-[-10000px_0_0_10000px_#fff] xl:w-[200px]',
+          'fixed bottom-0 left-0 right-0 top-[var(--mobile-header-height)] z-50 shrink-0 bg-white py-3 transition-[visibility,opacity] duration-300 lg:visible lg:relative lg:top-0 lg:w-[180px] lg:py-12 lg:opacity-100 lg:shadow-[-10000px_0_0_10000px_#fff] xl:w-[200px]',
           className,
           isOpen ? 'visible opacity-100' : 'invisible opacity-0',
         )}
       >
-        <div className='container flex flex-col gap-6'>
+        <div className='container flex flex-col gap-6 lg:px-0'>
           <Logo className='-ml-2 hidden lg:flex' href='/' />
           <ul className='flex grow flex-col'>
             {menuList.map(({ position, label, href, Icon }, i) => {

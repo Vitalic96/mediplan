@@ -14,7 +14,7 @@ const MembersWidget = forwardRef<
   return (
     <Card ref={ref} {...props}>
       <Card className='col-span-12 max-h-[450px] lg:col-span-4 lg:max-h-[850px]'>
-        <CardHeader className='min-h-[90px] shrink-0 gap-y-8'>
+        <CardHeader className='shrink-0 lg:gap-y-8'>
           <CardTitle variant='lg'>Members</CardTitle>
           <InputWithIcon Icon={Search}>
             <Input type='text' placeholder='Search' className='bg-[#F6F9FB]' />

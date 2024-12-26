@@ -36,7 +36,7 @@ export const BasicInfoTab = () => {
   return (
     <Form {...form}>
       <form onSubmit={form.handleSubmit(onSubmit)} className=''>
-        <div className='grid min-h-[280px] grid-cols-2 content-start gap-x-12 gap-y-2 pb-10'>
+        <div className='grid min-h-[280px] content-start gap-x-12 gap-y-2 pb-10 sm:grid-cols-2'>
           <FormField
             control={form.control}
             name='username'
@@ -121,7 +121,7 @@ export const BasicInfoTab = () => {
           />
         </div>
         <div className='text-center'>
-          <Button type='submit' className='w-[300px]'>
+          <Button type='submit' className='w-full max-w-[300px]'>
             Schedule Call
           </Button>
         </div>

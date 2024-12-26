@@ -18,41 +18,57 @@ const PatientWidget = forwardRef<
     patientTabList[patientTabList.length - 1],
   )
   return (
-    <Card ref={ref} className={cn('max-h-[850px]', className)} {...props}>
-      <CardHeader className='min-h-[90px] shrink-0 gap-y-8'>
+    <Card ref={ref} className={cn('lg:max-h-[850px]', className)} {...props}>
+      <CardHeader className='shrink-0 gap-y-8'>
         <CardTitle variant='lg'>A patient</CardTitle>
       </CardHeader>
-      <CardContent className='custom-scroll flex flex-col gap-10 overflow-x-hidden lg:pt-5'>
+      <CardContent className='custom-scroll flex flex-col gap-4 overflow-x-hidden lg:gap-10 lg:pt-5'>
         <div className='flex items-center gap-5'>
-          <div className='flex aspect-square w-[150px] shrink-0 items-center justify-center rounded-full bg-gray-100 text-white'>
-            <UserRound size={75} />
+          <div className='flex aspect-square w-[100px] shrink-0 items-center justify-center rounded-full bg-gray-100 text-white xl:w-[150px]'>
+            <UserRound size={'50%'} />
           </div>
-          <div className='grow'>
-            <div className='text-[28px] leading-[1.3]'>Lorem Ipsum</div>
-            <Button variant='link' className='text-base text-[#FF5454]'>
-              <Trash2 />
-              Delete Pacient
-            </Button>
+          <div className='flex grow flex-col gap-2 xl:flex-row'>
+            <div className='grow'>
+              <div className='text-xl leading-[1.3] 2xs:text-2xl xl:max-w-[250px] xl:text-[28px]'>
+                Lorem Ipsum
+              </div>
+              <Button
+                variant='link'
+                className='hidden text-base text-[#FF5454] xl:inline-flex'
+              >
+                <Trash2 />
+                Delete Pacient
+              </Button>
+            </div>
+            <ul className='flex shrink-0 gap-3 2xs:gap-5 xl:pt-1'>
+              <li>
+                <Button size='xsIcon' className='xl:w-6'>
+                  <Phone size={14} />
+                </Button>
+              </li>
+              <li>
+                <Button size='xsIcon' className='xl:w-6'>
+                  <Mail size={14} />
+                </Button>
+              </li>
+              <li>
+                <Button size='xsIcon' className='xl:w-6'>
+                  <Pencil size={14} />
+                </Button>
+              </li>
+              <li className='xl:hidden'>
+                <Button
+                  size='xsIcon'
+                  variant='ghost'
+                  className='bg-gray-600 text-white xl:w-6'
+                >
+                  <Trash2 size={14} />
+                </Button>
+              </li>
+            </ul>
           </div>
-          <ul className='flex shrink-0 gap-5'>
-            <li>
-              <Button size='xsIcon'>
-                <Phone size={14} />
-              </Button>
-            </li>
-            <li>
-              <Button size='xsIcon'>
-                <Mail size={14} />
-              </Button>
-            </li>
-            <li>
-              <Button size='xsIcon'>
-                <Pencil size={14} />
-              </Button>
-            </li>
-          </ul>
         </div>
-        <div className='-ml-3 -mr-8 flex grow flex-wrap gap-x-1 gap-y-[10px] pt-2'>
+        <div className='flex grow flex-wrap xs:gap-2 lg:-mx-4 xl:-ml-3 xl:-mr-8 xl:gap-x-1 xl:gap-y-[10px] xl:pt-2'>
           {patientTabList.map((label, i) => {
             const isActive = activeTab === label
 
@@ -60,7 +76,7 @@ const PatientWidget = forwardRef<
               <Button
                 key={i}
                 className={cn(
-                  'grow basis-[100px] px-2 text-base sm:grow-0',
+                  'shrink-0 grow basis-[calc(50%-4px)] justify-start text-xs xs:text-base sm:grow-0 sm:basis-[calc(33%-4px)] lg:basis-[100px] lg:justify-center xl:px-2',
                   !isActive && 'text-[#817474]',
                 )}
                 variant={isActive ? 'primary' : 'ghost'}
@@ -72,7 +88,7 @@ const PatientWidget = forwardRef<
             )
           })}
         </div>
-        <div className='custom-scroll -mb-7 -mr-2 grow overflow-x-hidden pb-7 pr-2'>
+        <div className='custom-scroll -mr-2 grow overflow-x-hidden pr-2 lg:-mb-7 lg:pb-7'>
           {activeTab === 'Basic Info' && <BasicInfoTab />}
           {activeTab === 'E-visit history' && <EVisitHistoryTab />}
         </div>

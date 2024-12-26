@@ -40,7 +40,8 @@ const Sidebar = ({
                     href={href}
                     className={cn(
                       'group relative flex items-center gap-3 py-6 text-[15px] font-light text-gray-700 duration-300 before:absolute before:bottom-0 before:right-0 before:top-0 before:m-auto before:h-0 before:w-[1px] before:bg-violet before:opacity-0 before:transition-all before:duration-500 hover:text-violet hover:before:h-[23px] hover:before:opacity-100',
-                      isActivePage && 'font-normal text-violet',
+                      isActivePage &&
+                        'font-normal text-violet before:h-[23px] before:opacity-100',
                     )}
                   >
                     <Icon className='shrink-0' />

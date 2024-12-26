@@ -1,10 +1,17 @@
 'use client'
 
+import { useState } from 'react'
+
 import { Button } from '@/components/ui/button'
 import { mockEVisitHistory } from '@/lib/mocks'
+import { CreateNoteDialog } from '@/components/dialogs/create-note-dialog'
 import WrittingIcon from '@/assets/icons/writing.svg'
 
 const EVisitHistoryTab = () => {
+  const [isOpen, setIsOpen] = useState(false)
+
+  const handleOpen = () => setIsOpen(true)
+
   return (
     <>
       <table className='w-full table-fixed border-separate border-spacing-y-4 text-[10px] [&_td:first-child]:rounded-l-full [&_td:last-child]:rounded-r-full [&_td]:bg-gray-50 [&_tr_>*:first-child]:pl-4 [&_tr_>*:last-child]:pr-4'>
@@ -43,6 +50,7 @@ const EVisitHistoryTab = () => {
           })}
         </tbody>
       </table>
+      <CreateNoteDialog open={isOpen} onOpenChange={setIsOpen} />
     </>
   )
 }

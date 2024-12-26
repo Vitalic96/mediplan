@@ -14,10 +14,10 @@ const UserList = ({ users, hasNumbers }: UserListProps) => {
         <li
           key={i}
           className={cn(
-            'xs:gap-x-5 flex justify-between gap-x-3 gap-y-2 xl:gap-x-6',
+            'flex justify-between gap-x-3 gap-y-2 xs:gap-x-5 xl:gap-x-6',
           )}
         >
-          <div className='2xs:gap-x-5 flex basis-44 items-center gap-x-3 gap-y-2 lg:grow xl:gap-x-6'>
+          <div className='flex basis-44 items-center gap-x-3 gap-y-2 2xs:gap-x-5 lg:grow xl:gap-x-6'>
             <Image
               className='h-12 w-12 shrink-0 self-center sm:h-[52px] sm:w-auto'
               src={image}
@@ -34,7 +34,7 @@ const UserList = ({ users, hasNumbers }: UserListProps) => {
           </div>
           <div
             className={cn(
-              'xs:gap-x-5 flex shrink-0 flex-col justify-between gap-x-3 gap-y-2 xl:grow xl:flex-row xl:items-end xl:gap-x-6',
+              'flex shrink-0 flex-col justify-between gap-x-3 gap-y-2 xs:gap-x-5 xl:grow xl:flex-row xl:items-end xl:gap-x-6',
               !description && 'xl:items-center',
             )}
           >

@@ -44,7 +44,7 @@ export const BasicInfoTab = () => {
               <FormItem>
                 <FormLabel>Name</FormLabel>
                 <FormControl>
-                  <Input placeholder='Enter your name' {...field} />
+                  <Input placeholder='Enter name' {...field} />
                 </FormControl>
                 <FormMessage />
               </FormItem>
@@ -57,11 +57,7 @@ export const BasicInfoTab = () => {
               <FormItem>
                 <FormLabel>Email</FormLabel>
                 <FormControl>
-                  <Input
-                    placeholder='Enter your email'
-                    {...field}
-                    type='email'
-                  />
+                  <Input placeholder='Enter email' {...field} type='email' />
                 </FormControl>
                 <FormMessage />
               </FormItem>
@@ -98,7 +94,7 @@ export const BasicInfoTab = () => {
             name='gender'
             render={({ field }) => (
               <FormItem>
-                <FormLabel>Number</FormLabel>
+                <FormLabel>Gender</FormLabel>
                 <FormControl>
                   <Input placeholder='Enter gender' {...field} />
                 </FormControl>

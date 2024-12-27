@@ -2,10 +2,10 @@
 
 import { forwardRef, useState } from 'react'
 
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
-import { Button } from '@/components/ui/button'
 import { cn } from '@/lib/utils'
 import { patientTabList } from '@/constants'
+import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
+import { Button } from '@/components/ui/button'
 import { BasicInfoTab } from './tabs/basic-info-tab'
 import { EVisitHistoryTab } from './tabs/e-visit-history-tab'
 import { PatientActions } from './patient-actions'

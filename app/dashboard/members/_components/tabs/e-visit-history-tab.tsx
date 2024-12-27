@@ -2,8 +2,8 @@
 
 import { useState } from 'react'
 
-import { Button } from '@/components/ui/button'
 import { mockEVisitHistory } from '@/lib/mocks'
+import { Button } from '@/components/ui/button'
 import { CreateNoteDialog } from '@/components/dialogs/create-note-dialog'
 import WrittingIcon from '@/assets/icons/writing.svg'
 

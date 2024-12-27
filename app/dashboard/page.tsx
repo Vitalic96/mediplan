@@ -1,15 +1,15 @@
 import { Search } from 'lucide-react'
 
-import { UserList } from '@/components/user-list'
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
-import { InputWithIcon } from '@/components/input-with-icon'
-import { Input } from '@/components/ui/input'
-import { CalendarWidget } from './_components/calendar-widget'
 import {
   mockActivityList,
   mockCommunityList,
   mockSearchList,
 } from '@/lib/mocks'
+import { UserList } from '@/components/user-list'
+import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
+import { InputWithIcon } from '@/components/input-with-icon'
+import { Input } from '@/components/ui/input'
+import { CalendarWidget } from './_components/calendar-widget'
 
 const DashboardPage = () => {
   return (

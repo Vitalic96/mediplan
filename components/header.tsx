@@ -5,12 +5,12 @@ import Link from 'next/link'
 import { useState } from 'react'
 import { Menu, Search, X } from 'lucide-react'
 
+import { cn } from '@/lib/utils'
 import { Logo } from '@/components/logo'
 import { InputWithIcon } from '@/components/input-with-icon'
 import { Input } from '@/components/ui/input'
 import { Button } from '@/components/ui/button'
 import { Sidebar } from '@/components/sidebar'
-import { cn } from '@/lib/utils'
 import UserPhoto from '@/assets/images/user/avatar.jpg'
 
 const Header = ({ className }: { className?: string }) => {

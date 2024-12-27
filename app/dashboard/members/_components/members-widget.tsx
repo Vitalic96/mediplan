@@ -1,11 +1,11 @@
 import { forwardRef } from 'react'
 import { Search } from 'lucide-react'
 
+import { mockSearchList } from '@/lib/mocks'
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import { Input } from '@/components/ui/input'
 import { InputWithIcon } from '@/components/input-with-icon'
 import { UserList } from '@/components/user-list'
-import { mockSearchList } from '@/lib/mocks'
 
 const MembersWidget = forwardRef<
   HTMLDivElement,

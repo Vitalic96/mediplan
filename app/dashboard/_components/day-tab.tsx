@@ -1,12 +1,10 @@
 'use client'
 
 import { useState } from 'react'
-import { ChevronLeft, ChevronRight } from 'lucide-react'
 import { BsPencilFill } from 'react-icons/bs'
 import { FaPhone } from 'react-icons/fa'
 
 import { mockdayCalendarList } from '@/lib/mocks'
-import { getDateFormat } from '@/lib/utils'
 import { Button } from '@/components/ui/button'
 import { EditMeetingDialog } from '@/components/dialogs/edit-meeting-dialog'
 import { CreateMeetingDialog } from '@/components/dialogs/create-meeting-dialog'

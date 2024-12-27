@@ -48,18 +48,32 @@ const PatientActions = ({ user }: PatientActionsProps) => {
     // delete logic
   }
 
+  console.log(userImage)
+
   return (
     <div className='flex items-center gap-5'>
       <label className='relative flex aspect-square w-[100px] shrink-0 cursor-pointer items-center justify-center rounded-full bg-gray-100 text-white xl:w-[150px]'>
         <UserRound size={'50%'} />
-        {userImage && (
-          <Image
-            src={userImage}
-            alt=''
-            className='absolute bottom-0 left-0 right-0 top-0 h-full w-full animate-fadein rounded-[inherit] object-cover'
-          />
-        )}
-        <input type='file' onChange={handleLoadImage} className='hidden' />
+        {userImage &&
+          (typeof userImage === 'string' ? (
+            <img
+              src={userImage}
+              alt=''
+              className='absolute bottom-0 left-0 right-0 top-0 h-full w-full animate-fadein rounded-[inherit] object-cover'
+            />
+          ) : (
+            <Image
+              src={userImage}
+              alt=''
+              className='absolute bottom-0 left-0 right-0 top-0 h-full w-full animate-fadein rounded-[inherit] object-cover'
+            />
+          ))}
+        <input
+          type='file'
+          accept='image/*'
+          onChange={handleLoadImage}
+          className='hidden'
+        />
       </label>
       <div className='flex grow flex-col gap-2 xl:flex-row'>
         <div className='grow'>

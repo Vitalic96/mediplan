@@ -33,7 +33,7 @@ const PatientWidget = forwardRef<
               <Button
                 key={i}
                 className={cn(
-                  'shrink-0 grow basis-[calc(50%-4px)] justify-start text-xs xs:text-base sm:grow-0 sm:basis-[calc(33%-4px)] lg:basis-[100px] lg:justify-center xl:px-2',
+                  'shrink-0 grow basis-[calc(50%-4px)] justify-start text-xs xs:text-base sm:grow-0 sm:basis-[calc(33%-4px)] lg:basis-[100px] lg:justify-center xl:basis-auto xl:px-4',
                   !isActive && 'text-[#817474]',
                 )}
                 variant={isActive ? 'primary' : 'ghost'}

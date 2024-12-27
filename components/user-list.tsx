@@ -35,11 +35,12 @@ const UserList = ({ users, onChangeUser, hasNumbers }: UserListProps) => {
             )}
             onClick={() => hasChangeEvent && handleChangeUser(user)}
           >
-            <div className='flex basis-44 items-center gap-x-3 gap-y-2 2xs:gap-x-5 lg:grow xl:gap-x-6'>
+            <div className='group flex basis-44 items-center gap-x-3 gap-y-2 2xs:gap-x-5 lg:grow xl:gap-x-6'>
               <div
                 className={cn(
-                  'relative h-12 w-12 shrink-0 self-center rounded-full before:absolute before:inset-0 before:rounded-[inherit] before:border-[3px] before:border-violet before:opacity-0 before:transition-opacity sm:h-[52px] sm:w-auto',
+                  'relative h-12 w-12 shrink-0 self-center rounded-full before:absolute before:inset-0 before:rounded-[inherit] before:border-[3px] before:border-violet before:opacity-0 before:transition-opacity before:duration-300 sm:h-[52px] sm:w-auto',
                   isActive && 'before:opacity-100',
+                  hasChangeEvent && 'group-active:before:opacity-50',
                 )}
               >
                 <Image
@@ -55,6 +56,8 @@ const UserList = ({ users, onChangeUser, hasNumbers }: UserListProps) => {
                   className={cn(
                     'transition-colors duration-300',
                     isActive && 'text-violet',
+                    hasChangeEvent &&
+                      'group-hover:text-violet group-active:text-violet-600',
                   )}
                 >
                   {name}

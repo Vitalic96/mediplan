@@ -23,7 +23,7 @@ export const mockActivityList = [
     ({
       id: String(i),
       image,
-      name: 'Lorem Ipsum',
+      name: 'Patient ' + i,
       info: 'Lorem Ipsum',
       date: '03.04.2021',
     }) satisfies UserCard,
@@ -55,7 +55,7 @@ export const mockSearchList = [
     ({
       id: String(i),
       image,
-      name: 'Lorem Ipsum ' + i,
+      name: 'Patient ' + i,
     }) satisfies UserCard,
 ) as UserCard[]
 
@@ -64,7 +64,7 @@ export const mockCommunityList = [Image3_1, Image3_2, Image3_3, Image3_4].map(
     ({
       id: String(i),
       image,
-      name: 'Lorem Ipsum',
+      name: 'Patient ' + i,
       description: 'Lorem IpsumLorem IpsumLorem IpsumLorem Ipsum',
       info: 'Lorem Ipsum',
       date: '03.04.2021',

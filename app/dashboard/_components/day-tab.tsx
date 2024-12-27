@@ -1,7 +1,9 @@
 'use client'
 
 import { useState } from 'react'
-import { ChevronLeft, ChevronRight, Pencil, Phone } from 'lucide-react'
+import { ChevronLeft, ChevronRight } from 'lucide-react'
+import { BsPencilFill } from 'react-icons/bs'
+import { FaPhone } from 'react-icons/fa'
 
 import { getDateFormat } from '@/lib/utils'
 import { Button } from '@/components/ui/button'
@@ -89,10 +91,10 @@ const DayTab = () => {
               </div>
               <div className='col-span-4 row-span-2 flex items-center justify-end gap-4'>
                 <Button size='xsIcon' disabled>
-                  <Phone size={12} />
+                  <FaPhone size={12} />
                 </Button>
                 <Button size='xsIcon' onClick={handleEdit}>
-                  <Pencil size={12} />
+                  <BsPencilFill size={12} />
                 </Button>
               </div>
             </li>

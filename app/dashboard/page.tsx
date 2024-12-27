@@ -16,7 +16,7 @@ const DashboardPage = () => {
     <div className='grid grid-cols-12 gap-5 py-12'>
       <CalendarWidget className='col-span-12 lg:col-span-6 lg:max-h-[415px]' />
       <Card className='col-span-12 max-h-[450px] lg:col-span-6 lg:max-h-[415px]'>
-        <CardHeader className='min-h-[90px] gap-x-6 gap-y-3'>
+        <CardHeader className='min-h-[90px] shrink-0 gap-x-6 gap-y-3'>
           <CardTitle asChild>
             <h3>Pacient Wall Activity</h3>
           </CardTitle>
@@ -26,7 +26,7 @@ const DashboardPage = () => {
         </CardContent>
       </Card>
       <Card className='col-span-12 max-h-[450px] lg:col-span-6 lg:max-h-[415px]'>
-        <CardHeader className='min-h-[90px] gap-x-6 gap-y-3'>
+        <CardHeader className='min-h-[90px] shrink-0 gap-x-6 gap-y-3'>
           <CardTitle>Search member</CardTitle>
           <InputWithIcon Icon={Search}>
             <Input type='text' placeholder='Search' />
@@ -37,7 +37,7 @@ const DashboardPage = () => {
         </CardContent>
       </Card>
       <Card className='col-span-12 max-h-[450px] lg:col-span-6 lg:max-h-[415px]'>
-        <CardHeader className='min-h-[90px] flex-col gap-x-6 gap-y-3 xl:flex-row xl:items-center'>
+        <CardHeader className='min-h-[90px] shrink-0 flex-col gap-x-6 gap-y-3 xl:flex-row xl:items-center'>
           <CardTitle>Person Community</CardTitle>
           <InputWithIcon Icon={Search} className='grow'>
             <Input type='text' placeholder='Search' />

@@ -19,8 +19,9 @@ export const mockActivityList = [
   Image1_4,
   Image1_5,
 ].map(
-  (image) =>
+  (image, i) =>
     ({
+      id: String(i),
       image,
       name: 'Lorem Ipsum',
       info: 'Lorem Ipsum',
@@ -28,17 +29,40 @@ export const mockActivityList = [
     }) satisfies UserCard,
 ) as UserCard[]
 
-export const mockSearchList = [Image2_1, Image2_2, Image2_3, Image2_4].map(
-  (image) =>
+export const mockSearchList = [
+  Image2_1,
+  Image2_2,
+  Image2_3,
+  Image2_4,
+  Image2_1,
+  Image2_2,
+  Image2_3,
+  Image2_4,
+  Image2_1,
+  Image2_2,
+  Image2_3,
+  Image2_4,
+  Image2_1,
+  Image2_2,
+  Image2_3,
+  Image2_4,
+  Image2_1,
+  Image2_2,
+  Image2_3,
+  Image2_4,
+].map(
+  (image, i) =>
     ({
+      id: String(i),
       image,
-      name: 'Lorem Ipsum',
+      name: 'Lorem Ipsum ' + i,
     }) satisfies UserCard,
 ) as UserCard[]
 
 export const mockCommunityList = [Image3_1, Image3_2, Image3_3, Image3_4].map(
-  (image) =>
+  (image, i) =>
     ({
+      id: String(i),
       image,
       name: 'Lorem Ipsum',
       description: 'Lorem IpsumLorem IpsumLorem IpsumLorem Ipsum',

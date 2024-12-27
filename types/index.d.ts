@@ -1,4 +1,5 @@
 type UserCard = {
+  id: string
   image: StaticImageData
   name: string
   description?: string

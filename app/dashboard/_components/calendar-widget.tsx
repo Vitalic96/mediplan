@@ -3,6 +3,7 @@
 import { forwardRef, useState } from 'react'
 
 import { Button } from '@/components/ui/button'
+import { WeekCalendarDialog } from '@/components/dialogs/week-calendar-dialog'
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import { DayTab } from './day-tab'
 import { MonthTab } from './month-tab'
@@ -35,9 +36,14 @@ const CalendarWidget = forwardRef<
       </CardHeader>
       <CardContent className='custom-scroll flex grow flex-col gap-3 overflow-x-hidden'>
         {activeIndexTab === 0 && <DayTab />}
-        {activeIndexTab === 1 && <DayTab />}
         {activeIndexTab === 2 && <MonthTab />}
       </CardContent>
+      <WeekCalendarDialog
+        open={activeIndexTab === 1}
+        activeTabIndex={activeIndexTab}
+        changeTab={setActiveIndexTab}
+        onOpenChange={(open) => open === false && setActiveIndexTab(0)}
+      />
     </Card>
   )
 })

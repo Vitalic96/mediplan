@@ -13,7 +13,13 @@ import { Button } from '@/components/ui/button'
 import { Sidebar } from '@/components/sidebar'
 import UserPhoto from '@/assets/images/user/avatar.jpg'
 
-const Header = ({ className }: { className?: string }) => {
+const Header = ({
+  className,
+  hideLogo,
+}: {
+  className?: string
+  hideLogo?: boolean
+}) => {
   const [isOpenMenu, setIsOpenMenu] = useState(false)
   const [isOpenSearch, setIsOpenSearch] = useState(false)
 
@@ -40,8 +46,9 @@ const Header = ({ className }: { className?: string }) => {
           <Logo
             href='/'
             className={cn(
-              'shrink-0 animate-fadein lg:hidden',
+              'shrink-0 animate-fadein lg:flex',
               isOpenMenu && 'hidden',
+              hideLogo && 'lg:hidden',
             )}
           />
           <Link

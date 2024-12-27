@@ -10,7 +10,7 @@ const DashboardLayout = ({
     <div className='container flex min-h-screen flex-col gap-5 lg:flex-row'>
       <Sidebar className='hidden lg:flex' />
       <main className='grow'>
-        <Header />
+        <Header hideLogo />
         <div className='-mt-8'>{children}</div>
       </main>
     </div>

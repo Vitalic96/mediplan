@@ -1,35 +1,37 @@
 import { forwardRef } from 'react'
 import { Search } from 'lucide-react'
 
-import { mockSearchList } from '@/lib/mocks'
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import { Input } from '@/components/ui/input'
 import { InputWithIcon } from '@/components/input-with-icon'
-import { UserList } from '@/components/user-list'
+import { UserList, UserListProps } from '@/components/user-list'
 
-const MembersWidget = forwardRef<
-  HTMLDivElement,
-  React.HTMLAttributes<HTMLDivElement>
->((props, ref) => {
-  return (
-    <Card ref={ref} {...props}>
-      <Card className='col-span-12 max-h-[450px] lg:col-span-4 lg:max-h-[850px]'>
-        <CardHeader className='shrink-0 lg:gap-y-8'>
-          <CardTitle variant='lg'>Members</CardTitle>
-          <InputWithIcon Icon={Search}>
-            <Input type='text' placeholder='Search' className='bg-[#F6F9FB]' />
-          </InputWithIcon>
-        </CardHeader>
-        <CardContent className='custom-scroll flex grow flex-col gap-6 overflow-x-hidden'>
-          <UserList
-            users={Array(10)
-              .fill(null)
-              .reduce((prev) => [...prev, ...mockSearchList], [])}
-          />
-        </CardContent>
+interface MembersWidgetProps
+  extends UserListProps,
+    React.HTMLAttributes<HTMLDivElement> {}
+
+const MembersWidget = forwardRef<HTMLDivElement, MembersWidgetProps>(
+  ({ users, onChangeUser, ...props }, ref) => {
+    return (
+      <Card ref={ref} {...props}>
+        <Card className='col-span-12 max-h-[450px] lg:col-span-4 lg:max-h-[850px]'>
+          <CardHeader className='shrink-0 lg:gap-y-8'>
+            <CardTitle variant='lg'>Members</CardTitle>
+            <InputWithIcon Icon={Search}>
+              <Input
+                type='text'
+                placeholder='Search'
+                className='bg-[#F6F9FB]'
+              />
+            </InputWithIcon>
+          </CardHeader>
+          <CardContent className='custom-scroll flex grow flex-col gap-6 overflow-x-hidden'>
+            <UserList users={users} onChangeUser={onChangeUser} />
+          </CardContent>
+        </Card>
       </Card>
-    </Card>
-  )
-})
+    )
+  },
+)
 
 export { MembersWidget }

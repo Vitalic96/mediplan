@@ -1,13 +1,19 @@
 'use client'
 
-import { ChangeEventHandler, forwardRef, useState } from 'react'
+import Image from 'next/image'
+import { ChangeEventHandler, useState } from 'react'
 import { Bell, Ellipsis, Trash2, UserRound } from 'lucide-react'
 
 import { Button } from '@/components/ui/button'
 import TelegramIcon from '@/assets/icons/telegram.svg'
 
-const PatientActions = () => {
-  const [image, setImage] = useState('')
+interface PatientActionsProps {
+  user: UserCard
+}
+
+const PatientActions = ({ user }: PatientActionsProps) => {
+  const [image, setImage] = useState<string | null>(null)
+  const userImage = image ?? user.image
 
   const handleLoadImage: ChangeEventHandler<HTMLInputElement> = (event) => {
     const [file] = event.target.files ?? []
@@ -35,11 +41,11 @@ const PatientActions = () => {
     <div className='flex items-center gap-5'>
       <label className='relative flex aspect-square w-[100px] shrink-0 cursor-pointer items-center justify-center rounded-full bg-gray-100 text-white xl:w-[150px]'>
         <UserRound size={'50%'} />
-        {image && (
-          <img
-            src={image}
+        {userImage && (
+          <Image
+            src={userImage}
             alt=''
-            className='absolute bottom-0 left-0 right-0 top-0 h-full w-full rounded-[inherit] object-cover'
+            className='absolute bottom-0 left-0 right-0 top-0 h-full w-full animate-fadein rounded-[inherit] object-cover'
           />
         )}
         <input type='file' onChange={handleLoadImage} className='hidden' />
@@ -47,7 +53,7 @@ const PatientActions = () => {
       <div className='flex grow flex-col gap-2 xl:flex-row'>
         <div className='grow'>
           <div className='text-xl leading-[1.3] 2xs:text-2xl xl:max-w-[250px] xl:text-[28px]'>
-            Lorem Ipsum
+            {user.name}
           </div>
           <Button
             variant='link'

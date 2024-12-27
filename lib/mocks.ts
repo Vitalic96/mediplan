@@ -120,6 +120,33 @@ export const mockEVisitHistory = [
   },
 ]
 
+export const mockdayCalendarList = [
+  {
+    name: 'Bonnie Riley',
+    time: '5pm-6pm',
+  },
+  {
+    name: 'Aliah Pitts',
+    time: '5pm-6pm',
+  },
+  {
+    name: 'Robin Papa',
+    time: '5pm-6pm',
+  },
+  {
+    name: 'Irma Rogers',
+    time: '6pm-7pm',
+  },
+  {
+    name: 'Bonnie Riley',
+    time: '5pm-6pm',
+  },
+  {
+    name: 'Aliah Pitts',
+    time: '5pm-6pm',
+  },
+]
+
 export const mockWeekCalendarList = [
   {
     dayWeek: 'Mon',

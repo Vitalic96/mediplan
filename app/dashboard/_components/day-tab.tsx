@@ -5,6 +5,7 @@ import { ChevronLeft, ChevronRight } from 'lucide-react'
 import { BsPencilFill } from 'react-icons/bs'
 import { FaPhone } from 'react-icons/fa'
 
+import { mockdayCalendarList } from '@/lib/mocks'
 import { getDateFormat } from '@/lib/utils'
 import { Button } from '@/components/ui/button'
 import { EditMeetingDialog } from '@/components/dialogs/edit-meeting-dialog'
@@ -52,32 +53,7 @@ const DayTab = () => {
       </div>
       <div className='flex flex-col items-start gap-2'>
         <ul className='flex w-full flex-col gap-2.5 border-b border-gray-100 pb-4'>
-          {[
-            {
-              name: 'Bonnie Riley',
-              time: '5pm-6pm',
-            },
-            {
-              name: 'Aliah Pitts',
-              time: '5pm-6pm',
-            },
-            {
-              name: 'Robin Papa',
-              time: '5pm-6pm',
-            },
-            {
-              name: 'Irma Rogers',
-              time: '6pm-7pm',
-            },
-            {
-              name: 'Bonnie Riley',
-              time: '5pm-6pm',
-            },
-            {
-              name: 'Aliah Pitts',
-              time: '5pm-6pm',
-            },
-          ].map(({ name, time }, i) => (
+          {mockdayCalendarList.map(({ name, time }, i) => (
             <li
               key={i}
               className='grid grid-flow-col grid-rows-2 items-center justify-between gap-x-5 rounded-md bg-[#F6F6F6] px-4 py-2 xl:flex xl:bg-transparent xl:p-0'

@@ -1,10 +1,8 @@
-import Image from 'next/image'
-import { ChangeEventHandler, useState } from 'react'
-import { format } from 'date-fns'
 import { DialogProps } from '@radix-ui/react-dialog'
 import { Search } from 'lucide-react'
 
-import { cn } from '@/lib/utils'
+import { getDateFormat } from '@/lib/utils'
+import { mockSearchList } from '@/lib/mocks'
 import {
   Dialog,
   DialogClose,
@@ -15,7 +13,6 @@ import {
   DialogTitle,
 } from '@/components/ui/dialog'
 import { Button } from '@/components/ui/button'
-import { Textarea } from '@/components/ui/textarea'
 import {
   Select,
   SelectContent,
@@ -23,23 +20,18 @@ import {
   SelectTrigger,
   SelectValue,
 } from '@/components/ui/select'
-import { InputWithIcon } from '../input-with-icon'
 import { Input } from '@/components/ui/input'
+import { InputWithIcon } from '../input-with-icon'
 import { UserList } from '../user-list'
-import { mockSearchList } from '@/lib/mocks'
 
-const CreateMeetingDialog = (props: DialogProps) => {
-  const [message, setNote] = useState('')
-  const [date, setDate] = useState<Date>()
-
-  const handleMessageChange: ChangeEventHandler<HTMLTextAreaElement> = (
-    event,
-  ) => {
-    setNote(event.target.value)
-  }
-
+const CreateMeetingDialog = ({
+  date,
+  onSave,
+  ...props
+}: DialogProps & { date: Date | undefined; onSave: (date: Date) => void }) => {
   const handleSave = () => {
     // save logic
+    onSave(date ?? new Date())
   }
 
   return (
@@ -51,7 +43,9 @@ const CreateMeetingDialog = (props: DialogProps) => {
         </DialogHeader>
         <div className='flex flex-col gap-8 py-4'>
           <div className='flex items-center justify-center'>
-            <div className='text-[22px] text-[#2D1143]'>22 May, 2021</div>
+            <div className='text-[22px] text-[#2D1143]'>
+              {date && getDateFormat(date)}
+            </div>
           </div>
           <div className='flex justify-between gap-x-12 gap-y-4'>
             <InputWithIcon
@@ -102,7 +96,13 @@ const CreateMeetingDialog = (props: DialogProps) => {
               </Select>
             </div>
           </div>
-          <UserList users={mockSearchList} />
+          <div>
+            <UserList
+              className='custom-scroll max-h-[270px] overflow-auto'
+              onChangeUser={() => {}}
+              users={mockSearchList}
+            />
+          </div>
         </div>
         <DialogFooter className='justify-between'>
           <DialogClose asChild>

@@ -9,9 +9,15 @@ export interface UserListProps {
   users: UserCard[]
   onChangeUser?: (user: UserCard) => void
   hasNumbers?: boolean
+  className?: string
 }
 
-const UserList = ({ users, onChangeUser, hasNumbers }: UserListProps) => {
+const UserList = ({
+  users,
+  onChangeUser,
+  hasNumbers,
+  className,
+}: UserListProps) => {
   const [activeUser, setUser] = useState<UserCard | null>(null)
   const hasChangeEvent = Boolean(onChangeUser)
 
@@ -21,7 +27,7 @@ const UserList = ({ users, onChangeUser, hasNumbers }: UserListProps) => {
   }
 
   return (
-    <ul className='flex flex-col gap-5'>
+    <ul className={cn('flex flex-col gap-5', className)}>
       {users.map((user, i) => {
         const { id, image, name, description, info, date } = user
         const isActive = activeUser && activeUser.id === id

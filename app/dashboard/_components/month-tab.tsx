@@ -3,7 +3,7 @@
 import { useMemo, useState } from 'react'
 import {
   MonthChangeEventHandler,
-  SelectSingleEventHandler,
+  SelectMultipleEventHandler,
 } from 'react-day-picker'
 
 import { getDateFormat } from '@/lib/utils'
@@ -13,8 +13,9 @@ import { CreateMeetingDialog } from '@/components/dialogs/create-meeting-dialog'
 
 const MonthTab = () => {
   const [isCreatePopupOpen, setIsCreateMeetingPopupOpen] = useState(false)
-  const [date, setDate] = useState<Date | undefined>(new Date())
-  const [month, setMonth] = useState(date)
+  const [dates, setDates] = useState<Date[]>([])
+  const [selectedDate, setSelectedDate] = useState<Date | undefined>()
+  const [month, setMonth] = useState(new Date())
   const [firstDay, lastDay] = useMemo(() => {
     if (month == undefined) {
       return [getDateFormat(new Date()), getDateFormat(new Date())]
@@ -25,13 +26,17 @@ const MonthTab = () => {
     return [getDateFormat(firstDay), getDateFormat(lastDay)]
   }, [month])
 
-  const handleDateSelect: SelectSingleEventHandler = (date) => {
-    setDate(date)
+  const handleDateSelect: SelectMultipleEventHandler = (dates, date) => {
+    setSelectedDate(date)
     setIsCreateMeetingPopupOpen(true)
   }
 
   const handleMonthChange: MonthChangeEventHandler = (date) => {
     setMonth(date)
+  }
+
+  const handleOnSave = (newDate: Date) => {
+    setDates((p) => [...p, newDate])
   }
 
   return (
@@ -46,14 +51,15 @@ const MonthTab = () => {
         </Badge>
       </div>
       <Calendar
-        mode='single'
-        defaultMonth={date}
-        selected={date}
+        mode='multiple'
+        selected={dates}
         onMonthChange={handleMonthChange}
         onSelect={handleDateSelect}
         className='rounded-md border'
       />
       <CreateMeetingDialog
+        date={selectedDate}
+        onSave={handleOnSave}
         open={isCreatePopupOpen}
         onOpenChange={setIsCreateMeetingPopupOpen}
       />

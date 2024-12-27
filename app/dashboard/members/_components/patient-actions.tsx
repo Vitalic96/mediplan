@@ -48,8 +48,6 @@ const PatientActions = ({ user }: PatientActionsProps) => {
     // delete logic
   }
 
-  console.log(userImage)
-
   return (
     <div className='flex items-center gap-5'>
       <label className='relative flex aspect-square w-[100px] shrink-0 cursor-pointer items-center justify-center rounded-full bg-gray-100 text-white xl:w-[150px]'>

@@ -118,7 +118,7 @@ export const BasicInfoTab = () => {
         </div>
         <div className='text-center'>
           <Button type='submit' className='w-full max-w-[300px]'>
-            Schedule Call
+            Save
           </Button>
         </div>
       </form>

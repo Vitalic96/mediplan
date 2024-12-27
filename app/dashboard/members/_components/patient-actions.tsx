@@ -39,7 +39,7 @@ const PatientActions = () => {
           <img
             src={image}
             alt=''
-            className='absolute bottom-0 left-0 right-0 top-0 h-full w-full object-cover'
+            className='absolute bottom-0 left-0 right-0 top-0 h-full w-full rounded-[inherit] object-cover'
           />
         )}
         <input type='file' onChange={handleLoadImage} className='hidden' />

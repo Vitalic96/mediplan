@@ -66,7 +66,7 @@ const UserList = ({ users, onChangeUser, hasNumbers }: UserListProps) => {
             </div>
             <div
               className={cn(
-                'flex shrink-0 flex-col justify-between gap-x-3 gap-y-2 xs:gap-x-5 xl:grow xl:flex-row xl:items-end xl:gap-x-6',
+                'flex shrink-0 flex-col justify-between gap-x-3 gap-y-2 xs:gap-x-5 xl:grow xl:flex-row xl:items-start xl:gap-x-6',
                 !description && 'xl:items-center',
               )}
             >

@@ -24,7 +24,7 @@ const PatientWidget = forwardRef<HTMLDivElement, PatientWidgetProps>(
       <Card ref={ref} className={cn('lg:max-h-[850px]', className)} {...props}>
         <CardHeader className='shrink-0 gap-y-8'>
           <CardTitle variant='lg'>
-            {user ? 'A patient' : 'Select patient'}
+            {user ? 'A patient' : 'Select a patient'}
           </CardTitle>
         </CardHeader>
         {/* TODO: ADD FADE IN ANIMATION */}

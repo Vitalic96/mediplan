@@ -13,6 +13,7 @@ import { ChangeDate } from '@/components/change-date'
 const DayTab = () => {
   const [isEditPopupOpen, setIsEditMeetingPopupOpen] = useState(false)
   const [isCreatePopupOpen, setIsCreateMeetingPopupOpen] = useState(false)
+  const [date, setDate] = useState(new Date())
 
   const handleEdit = () => {
     setIsEditMeetingPopupOpen(true)
@@ -22,9 +23,13 @@ const DayTab = () => {
     setIsCreateMeetingPopupOpen(true)
   }
 
+  const handleChangeDate = (date: Date) => {
+    setDate(date)
+  }
+
   return (
     <>
-      <ChangeDate initDate={new Date()} />
+      <ChangeDate onChange={handleChangeDate} initDate={date} />
       <div className='flex flex-col items-start gap-2'>
         <ul className='flex w-full flex-col gap-2.5 border-b border-gray-100 pb-4'>
           {mockdayCalendarList.map(({ name, time }, i) => (
@@ -63,6 +68,8 @@ const DayTab = () => {
         onOpenChange={setIsEditMeetingPopupOpen}
       />
       <CreateMeetingDialog
+        date={date}
+        onSave={() => {}}
         open={isCreatePopupOpen}
         onOpenChange={setIsCreateMeetingPopupOpen}
       />

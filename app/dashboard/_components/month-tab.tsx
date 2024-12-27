@@ -13,7 +13,7 @@ import { CreateMeetingDialog } from '@/components/dialogs/create-meeting-dialog'
 
 const MonthTab = () => {
   const [isCreatePopupOpen, setIsCreateMeetingPopupOpen] = useState(false)
-  const [date, setDate] = useState<Date | undefined>(new Date(2021, 4, 21))
+  const [date, setDate] = useState<Date | undefined>(new Date())
   const [month, setMonth] = useState(date)
   const [firstDay, lastDay] = useMemo(() => {
     if (month == undefined) {

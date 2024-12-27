@@ -8,6 +8,7 @@ const DashboardLayout = ({
 }>) => {
   return (
     <div className='container flex min-h-screen flex-col gap-5 lg:flex-row'>
+      {/* TODO: change layout */}
       <Sidebar className='hidden lg:flex' />
       <main className='grow'>
         <Header hideLogo />

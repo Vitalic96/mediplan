@@ -6,15 +6,25 @@ import { ChevronLeft, ChevronRight } from 'lucide-react'
 import { getDateFormat } from '@/lib/utils'
 import { Button } from '@/components/ui/button'
 
-export const ChangeDate = ({ initDate }: { initDate: Date }) => {
+export const ChangeDate = ({
+  initDate,
+  onChange,
+}: {
+  initDate: Date
+  onChange: (date: Date) => void
+}) => {
   const [date, setDate] = useState<Date>(initDate)
 
   const handlePrevDate = () => {
-    setDate(new Date(date.setDate(date.getDate() - 1)))
+    const newDate = new Date(date.setDate(date.getDate() - 1))
+    onChange(newDate)
+    setDate(newDate)
   }
 
   const handleNextDate = () => {
-    setDate(new Date(date.setDate(date.getDate() + 1)))
+    const newDate = new Date(date.setDate(date.getDate() + 1))
+    onChange(newDate)
+    setDate(newDate)
   }
 
   return (
